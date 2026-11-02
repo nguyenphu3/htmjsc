@@ -1,0 +1,17 @@
+{
+  "name": "htm-ops",
+  "private": true,
+  "version": "0.1.0",
+  "description": "HTM Ops - nền tảng vận hành dự án, vật tư và xưởng cho doanh nghiệp thiết bị y tế",
+  "workspaces": ["packages/*", "apps/*"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev:api": "npm run dev -w @htm/api",
+    "dev:web": "npm run dev -w @htm/web",
+    "build": "npm run build -w @htm/shared && npm run build -w @htm/api && npm run build -w @htm/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w @htm/api",
+    "db:seed": "npm run db:seed -w @htm/api"
+  }
+}
